@@ -1,12 +1,10 @@
 <label for="pokemondropdown">Choose your Pokemon</label><br>
 <input type="text" name="pokemonInputBox" id="pokemonInputBox" list="pokemonDropdown">
-<datalist id="pokemonDropdown">
-    <option>shaymin</option>
-    <option>darkrai</option>
+<datalist id="pokemonDropdown" name="pokemonDropdown">
 </datalist>
 
 <script>
-    let pokemonDropdown = document.getElementById('pokemonDropdown');
+    dropdown = document.getElementById('pokemonDropdown');
     dropdown.length = 0;
 
     const pokemonListUrl = "pokemoncurrent.json";
@@ -25,9 +23,9 @@
 
                     for (let i = 0; i < data.length; i++) {
                         option = document.createElement('option');
-                        option.text = data[i].name;
-                        option.value = data[i].abbreviation;
-                        dropdown.add(option);
+                        option.text = data[i];
+                        option.value = data[i];
+                        dropdown.appendChild(option);
                     }
                 });
             }
