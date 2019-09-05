@@ -3,9 +3,7 @@
 <datalist id="pokemonDropdown" name="pokemonDropdown">
 </datalist>
 <button type="button" id="addPokemonButton" name="addPokemon">+</button><br>
-<p id="team"></p>
-<p id="points"></p>
-
+<div id="teamDisplayDiv"></div>
 
 <script>
     var dropdown = document.getElementById('pokemonDropdown');
@@ -47,8 +45,12 @@
 
     document.getElementById("addPokemonButton").addEventListener("click", function () {
         let pokemon = document.getElementById("pokemonInputBox").value;
-        document.getElementById("team").innerHTML += pokemon + " " + getPoints(pokemon) + " points<br>";
+
+        team[pokemon] = getPoints(pokemon);
+        document.getElementById("teamDisplayDiv").innerHTML = displayTeam();
         document.getElementById("pokemonInputBox").value = "";
+
+
     }, false);
 
     function getPoints(poke) {
@@ -57,4 +59,28 @@
         else if (t2.includes(poke)) return 1;
         else return 0;
     }
+
+    function displayTeam() {
+        let output = "";
+        for (let member in team) {
+            output += member + " : " + team[member] + " points<br>";
+        }
+
+        output += "<br>Total Points: " + getTotalPoints();
+
+        return output;
+    }
+
+    function getTotalPoints() {
+        let output = 0;
+        for (let member in team) {
+            output += team[member];
+        }
+
+        return output;
+    }
+
+   // document.getElementById("teamDisplayDiv").addEventListener("onchange", function () {
+
+    //})
 </script>
