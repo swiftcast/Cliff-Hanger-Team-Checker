@@ -49,6 +49,7 @@
         team[pokemon] = getPoints(pokemon);
         document.getElementById("teamDisplayDiv").innerHTML = displayTeam();
         document.getElementById("pokemonInputBox").value = "";
+        //activateRemoveButtons();
 
 
     }, false);
@@ -63,7 +64,8 @@
     function displayTeam() {
         let output = "";
         for (let member in team) {
-            output += member + " : " + team[member] + " points<br>";
+            output += member + " : " + team[member] + " points <button type='button' id='" + member + "' onclick='removePokemon(\"" + member + "\")'>-</button><br>";
+
         }
 
         output += "<br>Total Points: " + getTotalPoints();
@@ -80,7 +82,13 @@
         return output;
     }
 
-   // document.getElementById("teamDisplayDiv").addEventListener("onchange", function () {
+    function removePokemon(poke) {
+        delete team[poke];
+        document.getElementById("teamDisplayDiv").innerHTML = displayTeam();
+    }
+
+
+
 
     //})
 </script>
