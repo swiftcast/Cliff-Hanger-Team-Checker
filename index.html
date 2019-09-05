@@ -64,7 +64,7 @@
     function displayTeam() {
         let output = "";
         for (let member in team) {
-            output += member + " : " + team[member] + " points <button type='button' id='" + member + "' onclick='removePokemon(\"" + member + "\")'>-</button><br>";
+            output += "<img src='pokemon-icons/PNG/1x/" + member + ".png'> " + member + " : " + team[member] + " points <button type='button' id='" + member + "' onclick='removePokemon(\"" + member + "\")'>-</button><br>";
 
         }
 
