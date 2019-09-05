@@ -2,14 +2,18 @@
 <input type="text" name="pokemonInputBox" id="pokemonInputBox" list="pokemonDropdown">
 <datalist id="pokemonDropdown" name="pokemonDropdown">
 </datalist>
+<button type="button" id="addPokemon">+</button><br>
+
 
 <script>
     var dropdown = document.getElementById('pokemonDropdown');
     dropdown.length = 0;
 
-    var t0 = ["Altaria", "Azumarill"];
-    var t1 = [];
-    var t2 = [];
+    var t0 = ["Altaria", "Azumarill", "Deoxys-Defense", "Medicham", "Skarmory"];
+    var t1 = ["Bastiodon", "Bronzong", "Cresselia", "Hypno", "Ivysaur", "Jirachi", "Meganium", "Melmetal", "Probopass", "Swampert", "Tropius", "Venusaur"];
+    var t2 = ["Clefable", "Forretress", "Gallade", "Haunter", "Lanturn", "Lapras", "Lucario", "Lugia", "Magneton", "Magnezone", "Mew", "Muk-Alolan", "Noctowl", "Quasire", "Sableye", "Skuntank", "Steelix", "Toxicroak", "Umbreon", "Victreebel", "Vigoroth", "Whishcash", "Wigglytuff", "Wormadam-Trash"];
+
+    var team = [];
 
 
     const pokemonListUrl = "pokemoncurrent.json";
