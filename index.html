@@ -4,8 +4,13 @@
 </datalist>
 
 <script>
-    dropdown = document.getElementById('pokemonDropdown');
+    var dropdown = document.getElementById('pokemonDropdown');
     dropdown.length = 0;
+
+    var t0 = ["Altaria", "Azumarill"];
+    var t1 = [];
+    var t2 = [];
+
 
     const pokemonListUrl = "pokemoncurrent.json";
     fetch(pokemonListUrl)
@@ -22,7 +27,7 @@
                     let option;
 
                     for (let i = 0; i < data.length; i++) {
-                        option = document.createElement('option');
+                        let option = document.createElement('option');
                         option.text = data[i];
                         option.value = data[i];
                         dropdown.appendChild(option);
