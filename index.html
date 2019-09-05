@@ -2,7 +2,8 @@
 <input type="text" name="pokemonInputBox" id="pokemonInputBox" list="pokemonDropdown">
 <datalist id="pokemonDropdown" name="pokemonDropdown">
 </datalist>
-<button type="button" id="addPokemon">+</button><br>
+<button type="button" id="addPokemonButton" name="addPokemon">+</button><br>
+<div id="team"></div>
 
 
 <script>
@@ -43,4 +44,8 @@
             console.error('Fetch Error -', err);
         });
 
+    document.getElementById("addPokemonButton").addEventListener("click", function () {
+        let pokemon = document.getElementById("pokemonInputBox").value;
+        document.getElementById("team").innerHTML += pokemon + "<br>";
+    }, false);
 </script>
