@@ -3,7 +3,8 @@
 <datalist id="pokemonDropdown" name="pokemonDropdown">
 </datalist>
 <button type="button" id="addPokemonButton" name="addPokemon">+</button><br>
-<div id="team"></div>
+<p id="team"></p>
+<p id="points"></p>
 
 
 <script>
@@ -46,6 +47,14 @@
 
     document.getElementById("addPokemonButton").addEventListener("click", function () {
         let pokemon = document.getElementById("pokemonInputBox").value;
-        document.getElementById("team").innerHTML += pokemon + "<br>";
+        document.getElementById("team").innerHTML += pokemon + " " + getPoints(pokemon) + " points<br>";
+        document.getElementById("pokemonInputBox").value = "";
     }, false);
+
+    function getPoints(poke) {
+        if (t0.includes(poke)) return 9;
+        else if (t1.includes(poke)) return 5;
+        else if (t2.includes(poke)) return 1;
+        else return 0;
+    }
 </script>
