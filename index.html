@@ -22,9 +22,9 @@
     var dropdown = document.getElementById('pokemonDropdown');
     dropdown.length = 0;
 
-    var t0 = ["Altaria", "Azumarill", "Deoxys-Defense", "Medicham", "Skarmory"];
-    var t1 = ["Bastiodon", "Bronzong", "Cresselia", "Hypno", "Ivysaur", "Jirachi", "Meganium", "Melmetal", "Probopass", "Swampert", "Tropius", "Venusaur"];
-    var t2 = ["Clefable", "Forretress", "Gallade", "Haunter", "Lanturn", "Lapras", "Lucario", "Lugia", "Magneton", "Magnezone", "Mew", "Muk-Alolan", "Noctowl", "Quasire", "Sableye", "Skuntank", "Steelix", "Toxicroak", "Umbreon", "Victreebel", "Vigoroth", "Whishcash", "Wigglytuff", "Wormadam-Trash"];
+    var t0 = ["Altaria", "Azumarill", "Deoxys-Defense", "Medicham", "Skarmory"].map(v => v.toLowerCase());
+    var t1 = ["Bastiodon", "Bronzong", "Cresselia", "Hypno", "Ivysaur", "Jirachi", "Meganium", "Melmetal", "Probopass", "Swampert", "Tropius", "Venusaur"].join('|').toLowerCase().split('|');
+    var t2 = ["Clefable", "Forretress", "Gallade", "Haunter", "Lanturn", "Lapras", "Lucario", "Lugia", "Magneton", "Magnezone", "Mew", "Muk-Alolan", "Noctowl", "Quasire", "Sableye", "Skuntank", "Steelix", "Toxicroak", "Umbreon", "Victreebel", "Vigoroth", "Whishcash", "Wigglytuff", "Wormadam-Trash"].join('|').toLowerCase().split('|');
 
     var team = [];
 
@@ -68,9 +68,9 @@
     }, false);
 
     function getPoints(poke) {
-        if (t0.includes(poke)) return 9;
-        else if (t1.includes(poke)) return 5;
-        else if (t2.includes(poke)) return 1;
+        if (t0.includes(poke.toLowerCase())) return 9;
+        else if (t1.includes(poke.toLowerCase())) return 5;
+        else if (t2.includes(poke.toLowerCase())) return 1;
         else return 0;
     }
 
